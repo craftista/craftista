@@ -26,29 +26,26 @@ main {
     padding: 20px;
 }
 
-.products {
-    flex: 2;
-    margin-right: 20px;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+#products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .product {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .system-info {
+    padding: 30px;	
     flex: 1;
 }
 

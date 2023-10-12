@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Craftista</title>
+    <script src="/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,19 +14,14 @@
     </header>
 
     <main>
-        <section class="products">
-            <h2>Available Products</h2>
-            <div class="product-grid">
-                <% products.forEach(product => { %>
-                    <article class="product">
-                        <img src="<%= product.image_url %>" alt="<%= product.name %>">
-                        <h3><%= product.name %></h3>
-                        <p><%= product.description %></p>
-                    </article>
-                <% }); %>
-            </div>
+        <section id="product-list">
+          <h2>Available Products</h2>
+          <div id="products">
+          <!-- Products will be inserted here by script.js -->
+          </div>
+          <p id="loading-message">Loading products...</p>
         </section>
-        
+
         <aside class="system-info">
             <h2>System Information</h2>
             <p><strong>Hostname:</strong> <%= systemInfo.hostname %></p>
