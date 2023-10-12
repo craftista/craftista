@@ -4,7 +4,6 @@ const os = require('os');
 const fs = require('fs');
 const config = require('./config.json'); // Import configuration
 const app = express();
-const port = 3000;
 const productsApiBaseUri = config.productsApiBaseUri;
 
 app.set('view engine', 'ejs');
@@ -78,8 +77,16 @@ app.get('/api/service-status', async (req, res) => {
   }
 });
 
-
-app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
+// Handle 404
+app.use((req, res, next) => {
+    res.status(404).send('ERROR 404 - Not Found on This Server');
 });
+
+const PORT = process.env.PORT || 3000;
+const server = app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+module.exports = server; // Note that we're exporting the server, not app.
+
 
