@@ -1,4 +1,4 @@
 {
-  "backendApiUrl": "http://172.17.0.3:5000/api/products"
+  "productsApiBaseUri": "http://172.17.0.2:5000"
 }
 
