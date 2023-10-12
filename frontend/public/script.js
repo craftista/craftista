@@ -28,6 +28,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   // Fetch and display service status
   fetchServiceStatus();
+
+  // Fetch and display daily origami
+  fetchDailyOrigami();
+
+  checkDailyOrigamiStatus()
+  // Check status for daily origami every minute
+  setInterval(checkDailyOrigamiStatus, 60000);
+  setInterval(fetchServiceStatus, 60000);
 });
 
 function renderProducts(products) {
@@ -77,5 +85,38 @@ function capitalizeFirstLetter(string) {
 }
 
 
+function fetchDailyOrigami() {
+  fetch('/daily-origami')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('daily-origami-image').src = data.image_url;
+        document.getElementById('daily-origami-description').innerText = data.description;
+    })
+    .catch(error => {
+        console.error('Error fetching the daily origami:', error);
+    });
+}
 
+function checkDailyOrigamiStatus() {
+    fetch('/daily-origami-status')
+        .then(response => response.json())
+        .then(data => {
+            renderDailyOrigamiStatus(data);
+        })
+        .catch(error => {
+            console.error('Error fetching daily origami status:', error);
+        });
+}
+
+function renderDailyOrigamiStatus(status) {
+  const statusGrid = document.getElementById('status-grid');
+  
+  const statusBox = document.createElement('div');
+  statusBox.className = `status-box ${status.status}`;
+  statusBox.innerHTML = `
+    <h4>Daily Origami</h4>
+    <p>${capitalizeFirstLetter(status.status)}</p>
+  `;
+  statusGrid.appendChild(statusBox);
+}
 

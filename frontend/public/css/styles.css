@@ -33,6 +33,12 @@ main {
   margin-bottom: 20px;
 }
 
+#daily-origami {
+    width: 100%;
+    margin-top: 20px; /* Adjust as needed */
+    text-align: center;
+}
+
 .product {
   border: 1px solid #ccc;
   padding: 20px;

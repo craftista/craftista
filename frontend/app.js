@@ -5,6 +5,7 @@ const fs = require('fs');
 const config = require('./config.json'); // Import configuration
 const app = express();
 const productsApiBaseUri = config.productsApiBaseUri;
+const dailyorigamiBaseUri = config.dailyorigamiApiBaseUri;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -77,6 +78,28 @@ app.get('/api/service-status', async (req, res) => {
     });
   }
 });
+
+app.get('/daily-origami-status', (req, res) => {
+    axios.get(config.dailyorigamiBaseUri + '/api/dailyorigami-status')
+        .then(response => {
+            res.json({status: "up", message: "Daily Origami Service is Online"});
+        })
+        .catch(error => {
+            res.json({status: "down", message: "Daily Origami Service is Offline"});
+        });
+});
+
+
+app.get('/daily-origami', (req, res) => {
+    axios.get(config.dailyorigamiBaseUri + '/origami-of-the-day')
+        .then(response => {
+            res.json(response.data);
+        })
+        .catch(error => {
+            res.status(500).send("Error while fetching daily origami");
+        });
+});
+
 
 // Handle 404
 app.use((req, res, next) => {
