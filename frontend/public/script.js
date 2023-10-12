@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // Fetch and display daily origami
   fetchDailyOrigami();
 
-  checkDailyOrigamiStatus()
+  checkRecommendationStatus()
   // Check status for daily origami every minute
-  // setInterval(checkDailyOrigamiStatus, 5000);
+  // setInterval(checkRecommendationStatus, 5000);
   // setInterval(fetchServiceStatus, 5000);
 });
 
@@ -165,28 +165,28 @@ function renderDailyOrigamiFallback() {
     origamiContainer.innerHTML = '';
     
     // Add a fallback message
-    origamiContainer.innerHTML = '<p>Sorry, the daily origami is not available at the moment.</p>';
+    origamiContainer.innerHTML = '<p>Sorry, the recommendation engine is not available at the moment.</p>';
 }
 
 
-function checkDailyOrigamiStatus() {
-    fetch('/daily-origami-status')
+function checkRecommendationStatus() {
+    fetch('/recommendation-status')
         .then(response => response.json())
         .then(data => {
-            renderDailyOrigamiStatus(data);
+            renderRecommendationStatus(data);
         })
         .catch(error => {
-            console.error('Error fetching daily origami status:', error);
+            console.error('Error fetching recommendation service status:', error);
         });
 }
 
-function renderDailyOrigamiStatus(status) {
+function renderRecommendationStatus(status) {
   const statusGrid = document.getElementById('status-grid');
   
   const statusBox = document.createElement('div');
   statusBox.className = `status-box ${status.status}`;
   statusBox.innerHTML = `
-    <h4>Daily Origami</h4>
+    <h4>Recommendation</h4>
     <p>${capitalizeFirstLetter(status.status)}</p>
   `;
   statusGrid.appendChild(statusBox);

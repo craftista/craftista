@@ -5,7 +5,7 @@ const fs = require('fs');
 const config = require('./config.json'); // Import configuration
 const app = express();
 const productsApiBaseUri = config.productsApiBaseUri;
-const dailyorigamiBaseUri = config.dailyorigamiApiBaseUri;
+const recommendationBaseUri = config.recommendationBaseUri;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -79,19 +79,19 @@ app.get('/api/service-status', async (req, res) => {
   }
 });
 
-app.get('/daily-origami-status', (req, res) => {
-    axios.get(config.dailyorigamiBaseUri + '/api/dailyorigami-status')
+app.get('/recommendation-status', (req, res) => {
+    axios.get(config.recommendationBaseUri + '/api/recommendation-status')
         .then(response => {
-            res.json({status: "up", message: "Daily Origami Service is Online"});
+            res.json({status: "up", message: "Recommendation Service is Online"});
         })
         .catch(error => {
-            res.json({status: "down", message: "Daily Origami Service is Offline"});
+            res.json({status: "down", message: "Recommendation Service is Offline"});
         });
 });
 
 
 app.get('/daily-origami', (req, res) => {
-    axios.get(config.dailyorigamiBaseUri + '/origami-of-the-day')
+    axios.get(config.recommendationBaseUri + '/api/origami-of-the-day')
         .then(response => {
             res.json(response.data);
         })
