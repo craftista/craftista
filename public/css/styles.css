@@ -50,7 +50,7 @@ main {
 }
 
 footer {
-    background-color: #98fb98; /* sage green */
+    background-color: #e5e5e5;
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -68,4 +68,30 @@ footer {
         margin-right: 0;
         margin-bottom: 20px;
     }
+}
+
+
+.status-section {
+  margin: 20px 0;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.status-box {
+  padding: 10px;
+  text-align: center;
+}
+
+.status-box.up {
+  background-color: #025c69;
+  color: white;
+}
+
+.status-box.down {
+  background-color: red;
+  color: white;
 }

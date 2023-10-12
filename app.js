@@ -57,6 +57,28 @@ function isContainer() {
   }
 }
 
+app.get('/api/service-status', async (req, res) => {
+  try {
+    // Example of checking the status of the products service
+    const productServiceResponse = await axios.get(`${productsApiBaseUri}/api/products`);
+    
+    // Additional checks for more services can be added similarly
+
+    // If code execution reaches here, the service(s) are up
+    res.json({
+      productService: 'up',
+      // otherService: 'up' or 'down'
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    res.json({
+      productService: 'down',
+      // otherService: 'up' or 'down'
+    });
+  }
+});
+
+
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
