@@ -1,4 +1,5 @@
 {
+  "version": "1.0.0",	
   "productsApiBaseUri": "http://172.17.0.2:5000"
 }
 

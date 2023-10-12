@@ -36,7 +36,8 @@ app.get('/', (req, res) => {
   };
 
   res.render('index', {
-    systemInfo: systemInfo
+    systemInfo: systemInfo,
+    app_version: config.version, // provide version to the view
   });
 });
 

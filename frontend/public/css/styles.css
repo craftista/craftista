@@ -44,6 +44,18 @@ main {
   height: auto;
 }
 
+.version-circle {
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 .system-info {
     padding: 30px;	
     flex: 1;
@@ -87,7 +99,7 @@ footer {
 }
 
 .status-box.up {
-  background-color: #025c69;
+  background-color: green;
   color: white;
 }
 
