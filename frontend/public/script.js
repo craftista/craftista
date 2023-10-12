@@ -26,6 +26,20 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch((error) => {
       console.error('There has been a problem with your fetch operation:', error);
     });
+
+  document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('read-more')) {
+      event.preventDefault();
+      
+      const descId = event.target.getAttribute('data-desc-id');
+      const fullDescId = `full-${descId}`;
+      
+      document.getElementById(descId).classList.toggle('hidden');
+      document.getElementById(fullDescId).classList.toggle('hidden');
+    }
+  });
+
+
   // Fetch and display service status
   fetchServiceStatus();
 
@@ -48,10 +62,20 @@ function renderProducts(products) {
     productElement.innerHTML = `
       <h3>${product.name}</h3>
       <img src="${product.image_url}" alt="${product.name}" />
-      <p>${product.description}</p>
+      <p class="description" id="desc-${product.id}">${shortenDescription(product.description)}</p>
+      <a href="#" class="read-more" data-desc-id="desc-${product.id}">Read More</a>
+      <p class="full-description hidden" id="full-desc-${product.id}">${product.description}</p>
     `;
     productContainer.appendChild(productElement);
   });
+}
+
+function shortenDescription(description, length = 100) {
+  if(description.length > length) {
+    return `${description.substring(0, length)}...`;
+  } else {
+    return description;
+  }
 }
 
 function fetchServiceStatus() {

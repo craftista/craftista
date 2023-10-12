@@ -113,3 +113,13 @@ footer {
   background-color: red;
   color: white;
 }
+
+.hidden {
+  display: none;
+}
+
+.read-more {
+  color: blue;
+  cursor: pointer;
+}
+
