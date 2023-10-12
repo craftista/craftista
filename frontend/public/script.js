@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   checkDailyOrigamiStatus()
   // Check status for daily origami every minute
-  setInterval(checkDailyOrigamiStatus, 60000);
-  setInterval(fetchServiceStatus, 60000);
+  // setInterval(checkDailyOrigamiStatus, 5000);
+  // setInterval(fetchServiceStatus, 5000);
 });
 
 function renderProducts(products) {
@@ -87,15 +87,63 @@ function capitalizeFirstLetter(string) {
 
 function fetchDailyOrigami() {
   fetch('/daily-origami')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
     .then(data => {
-        document.getElementById('daily-origami-image').src = data.image_url;
-        document.getElementById('daily-origami-description').innerText = data.description;
+        renderDailyOrigami(data);
     })
     .catch(error => {
         console.error('Error fetching the daily origami:', error);
+        renderDailyOrigamiFallback();
     });
 }
+
+function renderDailyOrigami(data) {
+    // Get the container where the origami should be displayed
+    const origamiContainer = document.getElementById('daily-origami-container');
+
+    // Clear any existing content
+    origamiContainer.innerHTML = '';
+
+    // Create and add a header
+    const header = document.createElement('h2');
+    header.innerText = 'Origami of the Day';
+    origamiContainer.appendChild(header);
+
+    // Create new HTML elements and set their properties
+    const img = document.createElement('img');
+    img.src = data.image_url;
+    img.alt = 'Daily Origami';
+
+    const description = document.createElement('p');
+    description.innerText = data.description;
+
+    const name = document.createElement('h2');
+    name.innerText = data.name;
+
+
+    // Append the new elements to the container
+    origamiContainer.appendChild(img);
+    origamiContainer.appendChild(name);
+    origamiContainer.appendChild(description);
+}
+
+
+function renderDailyOrigamiFallback() {
+    // Get the container where the origami should be displayed
+    const origamiContainer = document.getElementById('daily-origami-container');
+    
+    // Clear any existing content
+    origamiContainer.innerHTML = '';
+    
+    // Add a fallback message
+    origamiContainer.innerHTML = '<p>Sorry, the daily origami is not available at the moment.</p>';
+}
+
 
 function checkDailyOrigamiStatus() {
     fetch('/daily-origami-status')
