@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch((error) => {
       console.error('There has been a problem with your fetch operation:', error);
     });
+  // Fetch and display service status
+  fetchServiceStatus();
 });
 
 function renderProducts(products) {
@@ -43,3 +45,37 @@ function renderProducts(products) {
     productContainer.appendChild(productElement);
   });
 }
+
+function fetchServiceStatus() {
+  fetch('/api/service-status')
+    .then(response => response.json())
+    .then(data => {
+      renderServiceStatus(data);
+    })
+    .catch((error) => {
+      console.error('Error fetching service status:', error);
+    });
+}
+
+function renderServiceStatus(status) {
+  const statusGrid = document.getElementById('status-grid');
+  statusGrid.innerHTML = ''; // clear the existing items
+  
+  Object.keys(status).forEach(service => {
+    const statusBox = document.createElement('div');
+    statusBox.className = `status-box ${status[service]}`;
+    statusBox.innerHTML = `
+      <h4>${capitalizeFirstLetter(service)}</h4>
+      <p>${capitalizeFirstLetter(status[service])}</p>
+    `;
+    statusGrid.appendChild(statusBox);
+  });
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+
+

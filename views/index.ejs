@@ -29,6 +29,14 @@
             <p><strong>Running in Container:</strong> <%= systemInfo.isContainer ? 'Yes' : 'No' %></p>
             <p><strong>Running on Kubernetes:</strong> <%= systemInfo.isKubernetes ? 'Yes' : 'No' %></p>
         </aside>
+
+        <section id="status" class="status-section">
+          <h2>Service Status</h2>
+          <div id="status-grid" class="status-grid">
+            <!-- Status boxes will be appended here by script.js -->
+          </div>
+        </section>
+
     </main>
 
     <footer>
