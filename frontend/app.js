@@ -6,6 +6,7 @@ const config = require('./config.json'); // Import configuration
 const app = express();
 const productsApiBaseUri = config.productsApiBaseUri;
 const recommendationBaseUri = config.recommendationBaseUri;
+const votingBaseUri = config.votingBaseUri;
 const origamisRouter = require('./routes/origamis');
 
 app.set('view engine', 'ejs');
@@ -88,6 +89,16 @@ app.get('/recommendation-status', (req, res) => {
         })
         .catch(error => {
             res.json({status: "down", message: "Recommendation Service is Offline"});
+        });
+});
+
+app.get('/votingservice-status', (req, res) => {
+    axios.get(config.votingBaseUri + '/api/origamis')
+        .then(response => {
+            res.json({status: "up", message: "Voting Service is Online"});
+        })
+        .catch(error => {
+            res.json({status: "down", message: "Voting Service is Offline"});
         });
 });
 

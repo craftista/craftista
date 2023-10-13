@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
   fetchDailyOrigami();
 
   checkRecommendationStatus()
-  // Check status for daily origami every minute
+  checkVotingServiceStatus()
+  // Check status at regular intervals
   // setInterval(checkRecommendationStatus, 5000);
   // setInterval(fetchServiceStatus, 5000);
 });
@@ -205,3 +206,25 @@ function renderRecommendationStatus(status) {
   statusGrid.appendChild(statusBox);
 }
 
+function checkVotingServiceStatus() {
+    fetch('/votingservice-status')
+        .then(response => response.json())
+        .then(data => {
+            renderVotingServiceStatus(data);
+        })
+        .catch(error => {
+            console.error('Error fetching voting service status:', error);
+        });
+}
+
+function renderVotingServiceStatus(status) {
+  const statusGrid = document.getElementById('status-grid');
+
+  const statusBox = document.createElement('div');
+  statusBox.className = `status-box ${status.status}`;
+  statusBox.innerHTML = `
+    <h4>Voting</h4>
+    <p>${capitalizeFirstLetter(status.status)}</p>
+  `;
+  statusGrid.appendChild(statusBox);
+}
