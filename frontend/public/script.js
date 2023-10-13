@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
   let currentItems = 6; // starting number of items to display
+  //let votingServiceAvailable = false; // global variable to store voting service status
+
+  checkVotingServiceStatus()
+  //setInterval(checkVotingServiceStatus, 30000);  // checks voting service status every 30 se
 
   fetch('/api/products')
     .then(response => {
@@ -10,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(data => {
       // Render initial batch of products
-      renderProducts(data.slice(0, currentItems));
+      renderProducts(data.slice(0, currentItems), votingServiceAvailable);
 
       // Remove loading message
       document.getElementById('loading-message').style.display = 'none';
@@ -19,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
       window.addEventListener('scroll', function() {
         if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
           currentItems += 6; // add 6 more items each time
-          renderProducts(data.slice(0, currentItems));
+          renderProducts(data.slice(0, currentItems), votingServiceAvailable);
         }
       });
     })
@@ -47,13 +51,13 @@ document.addEventListener("DOMContentLoaded", function() {
   fetchDailyOrigami();
 
   checkRecommendationStatus()
-  checkVotingServiceStatus()
+
   // Check status at regular intervals
   // setInterval(checkRecommendationStatus, 5000);
   // setInterval(fetchServiceStatus, 5000);
 });
 
-function renderProducts(products) {
+function renderProducts(products, canVote) {
   // Logic to display products on the page
   const productContainer = document.getElementById('products');
   productContainer.innerHTML = ''; // clear the existing items before appending
@@ -64,6 +68,7 @@ function renderProducts(products) {
       <h3>${product.name}</h3>
       <img src="${product.image_url}" alt="${product.name}" />
       <p id="votes-${product.id}">Votes: Loading...</p>
+      ${canVote ? `<button onclick="submitVote(${product.id})">Vote 👍</button>` : ''}
       <p class="description" id="desc-${product.id}">${shortenDescription(product.description)}</p>
       <a href="#" class="read-more" data-desc-id="desc-${product.id}">Read More</a>
       <p class="full-description hidden" id="full-desc-${product.id}">${product.description}</p>
@@ -81,6 +86,26 @@ function fetchVotesForOrigami(origamiId) {
             let votesElem = document.querySelector(`#votes-${origamiId}`);
             votesElem.textContent = `Votes: ${votes}`;
         });
+}
+
+function submitVote(productId) {
+    fetch(`/api/origamis/${productId}/vote`, {
+        method: 'POST'
+    })
+    .then(response => {
+        if(response.ok) {
+            // Update UI accordingly
+            //alert('Thank you for your vote!');
+            // Optionally, re-fetch and update the vote count display
+            fetchVotesForOrigami(productId);
+        } else {
+            alert('Vote did not get registered. Try again later.');
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting vote:', error);
+        alert('An error occurred while submitting your vote. Please try again later.');
+    });
 }
 
 
@@ -206,14 +231,25 @@ function renderRecommendationStatus(status) {
   statusGrid.appendChild(statusBox);
 }
 
+let votingServiceAvailable = false; // global variable to store voting service status
+
 function checkVotingServiceStatus() {
     fetch('/votingservice-status')
-        .then(response => response.json())
+	.then(response => {
+            if (response.ok) {
+                votingServiceAvailable = true;
+		return response.json(); 
+            } else {
+                votingServiceAvailable = false;
+                throw new Error('Service not available'); // Throwing an error to be caught in the catch block
+            }
+        })
         .then(data => {
             renderVotingServiceStatus(data);
         })
         .catch(error => {
             console.error('Error fetching voting service status:', error);
+	    votingServiceAvailable = false;
         });
 }
 
