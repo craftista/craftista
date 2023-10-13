@@ -62,13 +62,26 @@ function renderProducts(products) {
     productElement.innerHTML = `
       <h3>${product.name}</h3>
       <img src="${product.image_url}" alt="${product.name}" />
+      <p id="votes-${product.id}">Votes: Loading...</p>
       <p class="description" id="desc-${product.id}">${shortenDescription(product.description)}</p>
       <a href="#" class="read-more" data-desc-id="desc-${product.id}">Read More</a>
       <p class="full-description hidden" id="full-desc-${product.id}">${product.description}</p>
     `;
     productContainer.appendChild(productElement);
+    // Fetch votes for this origami
+    fetchVotesForOrigami(product.id);
   });
 }
+
+function fetchVotesForOrigami(origamiId) {
+    fetch(`/api/origamis/${origamiId}/votes`)
+        .then(response => response.json())
+        .then(votes => {
+            let votesElem = document.querySelector(`#votes-${origamiId}`);
+            votesElem.textContent = `Votes: ${votes}`;
+        });
+}
+
 
 function shortenDescription(description, length = 100) {
   if(description.length > length) {

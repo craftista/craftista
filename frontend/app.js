@@ -6,9 +6,11 @@ const config = require('./config.json'); // Import configuration
 const app = express();
 const productsApiBaseUri = config.productsApiBaseUri;
 const recommendationBaseUri = config.recommendationBaseUri;
+const origamisRouter = require('./routes/origamis');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use('/api/origamis', origamisRouter);
 
 // Static Middleware
 app.use('/static', express.static('public'));

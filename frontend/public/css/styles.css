@@ -39,15 +39,29 @@ main {
     text-align: center;
 }
 
-.product {
-  border: 1px solid #ccc;
-  padding: 20px;
-  text-align: center;
-}
 
 .product img {
   max-width: 100%;
   height: auto;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center; 
+    flex-basis: calc(25% - 2rem);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.product:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .version-circle {
