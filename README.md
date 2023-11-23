@@ -22,13 +22,13 @@ Daily Origami Recommendation: Be greeted daily with a new origami masterpiece, h
 **Interactive Community**: Engage with other origami enthusiasts, share insights, and discuss techniques.
 
 
-## The Architecture - Behind the Scenes
+## The Architecture 
 
 Craftista is not just an origami platform; it's a demonstration of modern web application development and microservices architecture. It leverages multiple backend services, including:
 
 ![Craftista Architevture](docs/Craftista-Architecture-SchoolofDevops-CC-BY-NC-SA4.0.jpg "Craftista Architecture")
 
-### frontend
+### Micro Service 1 - Frontend
 
 **Purpose**: 
 Serves as the frontend, acts as a router, integrates with all other services renders the  Graphical Interface.  
@@ -44,7 +44,7 @@ Express.js is a widely adopted and highly versatile web application framework fo
 Uber, Netflix, PayPal, LinkedIn, Groupon, Mozilla, Trello, Stack Overflow, GitHub, Myntra, Zomato,Trivago  
 
 
-### catalogue
+### Micro Service 2 - Catalogue
 
 **Purpose:** 
 Manages the origami showcase, including origami details and images.  
@@ -59,11 +59,11 @@ Flask is a lightweight and highly flexible Python web framework, making it an at
 **Who uses Flask:** 
 Netflix, Reddit, Lyft, Airbnb, Pinterest, Twilio, LinkedIn, MIT, Uber, Dropbox, Whitehouse.gov, Coursera  
 
-#### catalogue-db  
+#### Backing Service 1: catalogue-db  
 Phase 1 : JSON File  
 Phase 2 : MongoDB  
 
-### voting
+###  Micro Service 3 - Voting
 
 **Purpose:** 
 Handles the voting functionality, allowing users to vote for their favorite origami.  
@@ -73,12 +73,12 @@ Spring Boot is a powerful and widely adopted Java-based framework that offers nu
 **Who uses Spring Boot:**  
 Adobe, Microsoft, Yelp, American Express, Intuit, Vimeo, SoundCloud  
 
-#### voting-db
+#### Backing Service 2 : voting-db
 Phase 1 : H2  
 Phase 2 : PostgreSQL  
 
 
-### Recommendation 
+###  Micro Service 4 - Recommendation 
 
 **Purpose:** 
 Selects and presents the daily origami recommendation.    
