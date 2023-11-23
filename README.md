@@ -91,8 +91,6 @@ Google, Dropbox, Uber, Netflix, Twitch, Cloudflare, Heroku, X (Twitter), BBC
 
 Each service is built using a different technology stack, showcasing polyglot persistence and diverse backend technologies.
 
-## For Developers and DevOps Enthusiasts
-Craftista serves as a perfect sandbox for developers and DevOps practitioners. The microservices architecture of the application makes it an ideal candidate for experimenting with containerization, orchestration, CI/CD pipelines, and cloud-native technologies. It's designed to be a hands-on project for learning and implementing DevOps best practices.
 
 ## Why Craftista is the Best Application for Devops Projects ?
 
@@ -104,25 +102,37 @@ We have made deliberate efforts to choose the technologies commonly used by orga
 
 **Simple Design:**
 We have deliberately kept the design simple by removing a lot of additional services such as Shopping Carts, User Management, Payments Processing, Order Management to keep the scope of the project manageable. You will not get lost into the complexity of the architecture and get overwhelmed by the magnitute of services to work with. Yet it is still sophisticated enough for you to get a taste of a Real World Project. 
+![Simple Design](docs/stage4.png)
+
 
 **Iterative, Expandable and Resilient:**
 One of the reasons why this is a perfect learning app is at no point in time you would feel that its not good enough. Unlike a Real World app, which needs many different servies, database backends to be configured in order to have the MVP working,  You deploy one service with Craftista, you have a working UI Framework, without any backend services or databases being involved. And when you deploy additional services iteratively, the page keeps on getting richer, making it a perfect sample app to work with. 
+
+![4 Stages of Deployment](docs/4stages.png)
 
 **Prints System Info:**
 While building Devops Projects, you are going to deploy this app in containers, take it to kubernetes, scale it and put it behind load balancers. When that happens, how do you get the feedback on if its running within a container or not? Wouldn't it be nicer to find out if its running within a Kubernetes Cluster or not ? How do you validate the Load Balancer is working (should show differnt hostnames/ips every time you refresh). Thats where we have added the Sytems Info section which shows you all this relevant data. 
 ![System Info](docs/sysinfo.png "System Info")
 
 **Ability to Show the Version:**
+![App Version](docs/version.png "App Version")
 
 **Backend Service Status Dashboard:**
+![Service Status](docs/servicestatus.png "Service Status")
 
 **Incorporates Unit Tests  & Integration Tests:**
+![Unit Tests](docs/unittests.png)
 
 **Every Service with UI (including APIs):**
+![API Service](docs/api.png)
 
 **Mono Repo Structure:**
+![Mono Repo](docs/monorepo.png)
 
 
+
+## For Developers and DevOps Enthusiasts
+Craftista serves as a perfect sandbox for developers and DevOps practitioners. The microservices architecture of the application makes it an ideal candidate for experimenting with containerization, orchestration, CI/CD pipelines, and cloud-native technologies. It's designed to be a hands-on project for learning and implementing DevOps best practices.
 
 ## Contributing
 We welcome contributions from the community! Whether you're an origami artist wanting to showcase your work, a developer interested in microservices, or just someone enthusiastic about the project, your contributions are valuable. Check out our contributing guidelines for more information.
