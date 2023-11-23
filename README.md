@@ -26,16 +26,59 @@ Craftista is not just an origami platform; it's a demonstration of modern web ap
 
 ![Craftista Architevture](docs/Craftista-Architecture-SchoolofDevops-CC-BY-NC-SA4.0.jpg "Craftista Architecture")
 
-**Catalogue Service**: Manages the origami showcase, including origami details and images.  
-**Voting Service**: Handles the voting functionality, allowing users to vote for their favorite origami.  
-**Daily Origami Service**: Selects and presents the daily origami recommendation.  
+### frontend
+
+**Purpose**: Serves as the frontend, acts as a router, integrates with all other services renders the  Graphical Interface. 
+**Language**: Node.js
+**Framework**: Express.js
+**Why Express.js**: Express.js is a widely adopted and highly versatile web application framework for Node.js, offering several compelling reasons for its use. Its simplicity and minimalistic design make it an excellent choice for both beginners and experienced developers. Express.js provides a robust set of features and middleware, enabling rapid development of web applications and APIs. It excels at handling routes, HTTP requests, and various response types, allowing developers to build scalable and efficient server-side applications. Additionally, its active community and extensive ecosystem of plugins and modules make it easy to integrate with databases, authentication systems, and other technologies, streamlining the development process. Express.js's performance and flexibility, combined with its supportive community, make it a go-to choice for building web applications and APIs in Node.js.
+**Who uses Express.js:** Uber, Netflix, PayPal, LinkedIn, Groupon, Mozilla, Trello, Stack Overflow, GitHub, Myntra, Zomato,Trivago
+
+
+### catalogue
+
+**Purpose:** Manages the origami showcase, including origami details and images.  
+**Language:** Python
+**Framework:** Flask
+**Why Flask:** Flask is a lightweight and highly flexible Python web framework, making it an attractive choice for web developers. Its simplicity and minimalist design offer a low learning curve, making it ideal for small to medium-sized projects or when you need to quickly prototype an idea. Flask allows developers the freedom to choose components and libraries, giving them control over the tech stack and allowing for greater customization. It's well-suited for building RESTful APIs and web applications due to its clean and intuitive routing system. Flask also benefits from a supportive community and extensive documentation, ensuring developers have access to valuable resources when facing challenges. Overall, Flask's simplicity, flexibility, and ease of use make it a compelling choice for Python developers looking to build web applications and APIs efficiently and with a high degree of control.
+**Who uses Flask:** Netflix, Reddit, Lyft, Airbnb, Pinterest, Twilio, LinkedIn, MIT, Uber, Dropbox, Whitehouse.gov, Coursera
+
+#### catalogue-db
+Phase 1 : JSON File
+Phase 2 : MongoDB
+
+### voting
+
+**Purpose:** Provides Ability for the Users to vote up for thier favourite Origamis.  
+**Language:** Java
+**Framework:** Spring Boot 
+**Why Spring Boot Framework:** Spring Boot is a powerful and widely adopted Java-based framework that offers numerous advantages for developers. It excels in simplifying the development of production-ready, stand-alone, and enterprise-grade applications. One of its key strengths is convention over configuration, which significantly reduces boilerplate code and allows developers to focus on building features rather than dealing with infrastructure concerns. Spring Boot's comprehensive ecosystem provides support for various modules like data access, security, and messaging, simplifying integration with databases and third-party services. It also includes embedded servers, making it easy to deploy applications without the need for external web servers. Moreover, Spring Boot benefits from a vast and active community, ensuring access to extensive documentation and a wealth of resources. Overall, Spring Boot is a go-to choice for Java developers seeking rapid application development, maintainability, and scalability for a wide range of projects, from microservices to monolithic applications.
+**Who uses Spring Boot:**  Adobe, Microsoft, Yelp, American Express, Intuit, Vimeo, SoundCloud
+**Handles the voting functionality, allowing users to vote for their favorite origami.  
+
+#### voting-db
+Phase 1 : H2
+Phase 2 : PostgreSQL
+
+
+### Recommendation 
+
+**Purpose:** Selects and presents the daily origami recommendation.  
+**Language:** Golang
+**Why Golang:** Golang is a modern, open source programming language that makes it easy to build simple, reliable, and efficient software. It's also a compiled language, which makes it more efficient than other languages. Golang is a statically typed language, which means that the type of a variable is known at compile time. This makes Golang a great choice for building robust and reliable applications. Golang has a large community and extensive documentation available. ations.
+
+Go, also known as Golang, is a programming language developed by Google. It has gained popularity for its simplicity, performance, and suitability for building scalable and concurrent applications. It's also a compiled language, which makes it more efficient than other languages.Many companies and projects around the world use Go in their tech stack. Golang's performance and flexibility make it a compelling choice for developers looking to build robust and reliable applications. 
+ Many DevOps tools are written in Go to take advantage of these benefits.
+**DevOps tools written in Go:**: Docker, Kubernetes, Prometheus, Terraform, Consul, Nomad, Packer, Vault, Grafana, etcd, Istio 
+**Who uses Go Lang:** Google, Dropbox, Uber, Netflix, Twitch, Cloudflare, Heroku, X (Twitter), BBC
+
 
 Each service is built using a different technology stack, showcasing polyglot persistence and diverse backend technologies.
 
 ## For Developers and DevOps Enthusiasts
 Craftista serves as a perfect sandbox for developers and DevOps practitioners. The microservices architecture of the application makes it an ideal candidate for experimenting with containerization, orchestration, CI/CD pipelines, and cloud-native technologies. It's designed to be a hands-on project for learning and implementing DevOps best practices.
 
-What makes this a perfect Sample Application for Devops Projects ?
+## Why Craftista is the Best Application for Devops Projects ?
 
 **Real Life Like - Micro Services, Polyglot App:** If you look at the architecture and the services of Craftista App, it resembles a real life use case. It's a polyglot microservices based application, with multiple backend services, each with its own technology stack. You can think of it as a simplified version of a E-Commerce platform as it has the essential services such as a Modern UI written in Node.Js, a Product Catalogue Service, a Recommendation Engine and even a User Review App (Voting Service). When you are working with Craftista, it is as good as building a Real Life Project. 
 
