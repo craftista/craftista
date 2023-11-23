@@ -25,6 +25,8 @@ Daily Origami Recommendation: Be greeted daily with a new origami masterpiece, h
 
 Learn more about origami artists, their work, and their journey into the world of paper art.
 
+---
+
 
 ## The Architecture 
 
@@ -97,6 +99,7 @@ Google, Dropbox, Uber, Netflix, Twitch, Cloudflare, Heroku, X (Twitter), BBC
 
 Each service is built using a different technology stack, showcasing polyglot persistence and diverse backend technologies.
 
+---
 
 ## Why Craftista is the Perfect Learning App ?
 
@@ -148,6 +151,7 @@ While there are different school of thoughts while maintaining the code base, we
 
 ![Mono Repo](docs/monorepo.png)
 
+---
 
 ## For Developers and DevOps Enthusiasts
 Craftista serves as a perfect sandbox for developers and DevOps practitioners. The microservices architecture of the application makes it an ideal candidate for experimenting with containerization, orchestration, CI/CD pipelines, and cloud-native technologies. It's designed to be a hands-on project for learning and implementing DevOps best practices.
