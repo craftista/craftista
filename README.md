@@ -139,7 +139,7 @@ No real world application shows the status of all the backend services on the fr
 ### 08 - Incorporates Unit Tests  & Integration Tests:
 If you pick the Sample App, most of those are created by the developers to learn a new language and are mostly of type "Hello World !". When you are learning about devops technologies and specially building Continuous Integration Pipelines, its all about setting up that automated process to provide continuous feedback. How this feedback is generated ? Well, a major component of that is test cases.  And with shift-left philosophy, it started with Unit Tests, and then Integration Tests and then you could keep on adding additional test scenarios. To help you setup real life like project, we have added the real unit tests as part of each of the micro services code. Look at the example below, which shows the unit tests for the Product Catalogue Service written in Python. Now, Ain't that real ? 
 
-![Unit Tests](docs/unittests.png)
+![Unit Tests](docs/unit_tests.png)
 
 ### 09 Every Service with UI (including APIs):
 While learning devops, its not the **real life** project that you need, its more like **real life like** one which would make it a perfect learning app. Why? Because, most of the backend APIs in real life do not provide you with the UI. You have to look at the API documentation, and start making calls acordingly even to check whether that service is available or not. Not our Perfect Learning App. With Craftista, we have built UI with even the API services. Look at an example here, which shows the Product Catalogue Service with its API. Yes ! Our experience of teaching thousands of professionals from the top companies of the world is real :) 
