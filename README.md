@@ -98,7 +98,7 @@ Google, Dropbox, Uber, Netflix, Twitch, Cloudflare, Heroku, X (Twitter), BBC
 Each service is built using a different technology stack, showcasing polyglot persistence and diverse backend technologies.
 
 
-## Why Craftista is the Best Application for Devops Projects ?
+## Why Craftista is the Perfect Learning App ?
 
 ### 01 - Real Life Like - Micro Services, Polyglot App: 
 Craftista is not your typical hello world app or off the shelf wordpress app used in most devops trainings. It is a real deal. If you look at the architecture and the services of Craftista App, it resembles a real life use case. It's a polyglot microservices based application, with multiple backend services, each with its own technology stack. You can think of it as a simplified version of a E-Commerce platform as it has the essential services such as a Modern UI written in Node.Js, a Product Catalogue Service, a Recommendation Engine and even a User Review App (Voting Service). When you are working with Craftista, it is as good as building a Real Life Project. 
@@ -149,13 +149,11 @@ While there are different school of thoughts while maintaining the code base, we
 ![Mono Repo](docs/monorepo.png)
 
 
-
-
 ## For Developers and DevOps Enthusiasts
 Craftista serves as a perfect sandbox for developers and DevOps practitioners. The microservices architecture of the application makes it an ideal candidate for experimenting with containerization, orchestration, CI/CD pipelines, and cloud-native technologies. It's designed to be a hands-on project for learning and implementing DevOps best practices.
 
 ## Contributing
-We welcome contributions from the community! Whether you're an origami artist wanting to showcase your work, a developer interested in microservices, or just someone enthusiastic about the project, your contributions are valuable. Check out our contributing guidelines for more information.
+While we have attempted to make it a Perfect Learning App, and have got many things right, its still a work in progress. As we see more useful features from the perspective of learning Devops, we will continue to improve upon this work. We welcome contributions from the community! Whether you're an origami artist wanting to showcase your work, a developer interested in microservices, or just someone enthusiastic about the devops learning projects, your contributions are valuable. Check out our contributing guidelines(to be added) for more information. While we are writing the guidelines, feel free send us a pull request when you have something interesting to add.  
 
 ## License
 Craftista is open-sourced under the Apache License 2.0.
