@@ -162,6 +162,10 @@ While we have attempted to make it a Perfect Learning App, and have got many thi
 ## License
 Craftista is open-sourced under the Apache License 2.0.
 
+## How to Get started with Devops Mastery ? 
+While you could take this application code to design and build devops projects yourself, you may benefit by going through a holistic, structured program which combines Courses and Labs with Projects, AI Strategies, Community, Coaching and Certification Prep. Thats what [Devops Mastery System](https://schoolofdevops.com/#why) created by Gourav Shah, Founder at [School of Devops](https://schoolofdevops.com/) is all about. Gourav is a leading Corporate Trainer on Devops, has conducted 450+ workshops for Top companies of the world, has been a course creator with Linux Foundation, is published on eDX and has tailor built this learning app himself. Get started with your journey to upScale your Career and experience the AI Assisted, Project Centric Devops Mastery System and by enrolling into our [Starter Kit](https://schoolofdevops.com/#starterkit). 
+
+
 
 
 
