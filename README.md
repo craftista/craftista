@@ -1,5 +1,5 @@
 
-# Craftista - A Perfect App for Devops Projects
+# Craftista - A Perfect Devops Learning App
 
 We, at [School of Devops](www.schoolofdevops.com) take pride to introduce you to Craftista, a Polyglot, Micro-Services based application, built with the Modern Tech stack, specially designed to be used as a learning app to buid Devops Projects with.  
 
@@ -12,14 +12,18 @@ Welcome to Craftista, a unique web platform dedicated to the beautiful and intri
 
 ### Features
 
-**Origami Showcase**: Discover a wide array of origami creations, ranging from traditional designs to contemporary art pieces. Each origami has its own story and charm, waiting to be unfolded.
+**Origami Showcase**: 
 
-**User Voting System**: Participate in the community by voting for your favorite origami pieces. See what creations are trending and show your support for the artists.
+Discover a wide array of origami creations, ranging from traditional designs to contemporary art pieces. Each origami has its own story and charm, waiting to be unfolded.
+
+**User Voting System**: 
+
+Participate in the community by voting for your favorite origami pieces. See what creations are trending and show your support for the artists.
 Daily Origami Recommendation: Be greeted daily with a new origami masterpiece, handpicked to inspire and ignite your passion for paper folding.
 
-**Origami of the Day**: Learn more about origami artists, their work, and their journey into the world of paper art.
+**Origami of the Day**: 
 
-**Interactive Community**: Engage with other origami enthusiasts, share insights, and discuss techniques.
+Learn more about origami artists, their work, and their journey into the world of paper art.
 
 
 ## The Architecture 
@@ -28,7 +32,7 @@ Craftista is not just an origami platform; it's a demonstration of modern web ap
 
 ![Craftista Architevture](docs/Craftista-Architecture-SchoolofDevops-CC-BY-NC-SA4.0.jpg "Craftista Architecture")
 
-### Micro Service 1 - Frontend
+### Micro Service 01 - Frontend
 
 **Purpose**: 
 Serves as the frontend, acts as a router, integrates with all other services renders the  Graphical Interface.  
@@ -44,7 +48,7 @@ Express.js is a widely adopted and highly versatile web application framework fo
 Uber, Netflix, PayPal, LinkedIn, Groupon, Mozilla, Trello, Stack Overflow, GitHub, Myntra, Zomato,Trivago  
 
 
-### Micro Service 2 - Catalogue
+### Micro Service 02 - Catalogue
 
 **Purpose:** 
 Manages the origami showcase, including origami details and images.  
@@ -59,11 +63,11 @@ Flask is a lightweight and highly flexible Python web framework, making it an at
 **Who uses Flask:** 
 Netflix, Reddit, Lyft, Airbnb, Pinterest, Twilio, LinkedIn, MIT, Uber, Dropbox, Whitehouse.gov, Coursera  
 
-#### Backing Service 1: catalogue-db  
+#### Backing Service 01: catalogue-db  
 Phase 1 : JSON File  
 Phase 2 : MongoDB  
 
-###  Micro Service 3 - Voting
+###  Micro Service 03 - Voting
 
 **Purpose:** 
 Handles the voting functionality, allowing users to vote for their favorite origami.  
@@ -73,12 +77,12 @@ Spring Boot is a powerful and widely adopted Java-based framework that offers nu
 **Who uses Spring Boot:**  
 Adobe, Microsoft, Yelp, American Express, Intuit, Vimeo, SoundCloud  
 
-#### Backing Service 2 : voting-db
+#### Backing Service 02 : voting-db
 Phase 1 : H2  
 Phase 2 : PostgreSQL  
 
 
-###  Micro Service 4 - Recommendation 
+###  Micro Service 04 - Recommendation 
 
 **Purpose:** 
 Selects and presents the daily origami recommendation.    
@@ -96,7 +100,8 @@ Each service is built using a different technology stack, showcasing polyglot pe
 
 ## Why Craftista is the Best Application for Devops Projects ?
 
-### 01 - Real Life Like - Micro Services, Polyglot App: If you look at the architecture and the services of Craftista App, it resembles a real life use case. It's a polyglot microservices based application, with multiple backend services, each with its own technology stack. You can think of it as a simplified version of a E-Commerce platform as it has the essential services such as a Modern UI written in Node.Js, a Product Catalogue Service, a Recommendation Engine and even a User Review App (Voting Service). When you are working with Craftista, it is as good as building a Real Life Project. 
+### 01 - Real Life Like - Micro Services, Polyglot App: 
+Craftista is not your typical hello world app or off the shelf wordpress app used in most devops trainings. It is a real deal. If you look at the architecture and the services of Craftista App, it resembles a real life use case. It's a polyglot microservices based application, with multiple backend services, each with its own technology stack. You can think of it as a simplified version of a E-Commerce platform as it has the essential services such as a Modern UI written in Node.Js, a Product Catalogue Service, a Recommendation Engine and even a User Review App (Voting Service). When you are working with Craftista, it is as good as building a Real Life Project. 
 
 
 ### 02 - Modern Tech Stack:
@@ -112,29 +117,37 @@ One of the reasons why this is a perfect learning app is at no point in time you
 
 ![4 Stages of Deployment](docs/4stages.png)
 
-### 05 - Prints System Info:
-While building Devops Projects, you are going to deploy this app in containers, take it to kubernetes, scale it and put it behind load balancers. When that happens, how do you get the feedback on if its running within a container or not? Wouldn't it be nicer to find out if its running within a Kubernetes Cluster or not ? How do you validate the Load Balancer is working (should show differnt hostnames/ips every time you refresh). Thats where we have added the Sytems Info section which shows you all this relevant data. 
-![System Info](docs/sysinfo.png "System Info")
+### 05 - Displays Useful System Info:
+While building Devops Projects, you are going to deploy this app in containers, take it to kubernetes, scale it and put it behind load balancers. When that happens, how do you get the feedback on if its running within a container or not? Wouldn't it be nicer to find out if its running within a Kubernetes Cluster or not ? How do you validate the Load Balancer is working (should show differnt hostnames/ips every time you refresh). Thats where we have added the Sytems Info section which shows you all this relevant data.  
+
+
+![System Info](docs/sysinfo.png)
 
 ### 06 - Ability to Show the Version:
+While learning about Application Deployment and Release Engineeing, its important to visually see the versions of the apps being updated. In the real world application, its mostly about checking if the individual  new features have been deployed or not to see the changes. With our Sample App, everything is visible on the UI. To roll out a new version, all you need to do is bump up the version string, and trigger that rollout. Convenient, isn't it ? 
 
 ![App Version](docs/version.png "App Version")
 
 ### 07 - Backend Service Status Dashboard:
+No real world application shows the status of all the backend services on the frontend UI dashboard. Sure, they may have very sophisticated monitoring consoles with status dashboards built into it. However, when you are trying to learn about Devops, you neither have the team to do that work for you, nor have immediate resources to do it. In most cases, when you are getting started building skills, you may not have gotten to the monitoring setup yet. Our Backend Services Status dashboard, which is displayed right on the main UI, does a fantastic job to understand which services are available, and which are not. And its a great visual aid while you are learning and implementing technologies in iteration. Thats Perfect, I Say !  
 
 ![Service Status](docs/servicestatus.png "Service Status")
 
 ### 08 - Incorporates Unit Tests  & Integration Tests:
+If you pick the Sample App, most of those are created by the developers to learn a new language and are mostly of type "Hello World !". When you are learning about devops technologies and specially building Continuous Integration Pipelines, its all about setting up that automated process to provide continuous feedback. How this feedback is generated ? Well, a major component of that is test cases.  And with shift-left philosophy, it started with Unit Tests, and then Integration Tests and then you could keep on adding additional test scenarios. To help you setup real life like project, we have added the real unit tests as part of each of the micro services code. Look at the example below, which shows the unit tests for the Product Catalogue Service written in Python. Now, Ain't that real ? 
 
 ![Unit Tests](docs/unittests.png)
 
 ### 09 Every Service with UI (including APIs):
+While learning devops, its not the **real life** project that you need, its more like **real life like** one which would make it a perfect learning app. Why? Because, most of the backend APIs in real life do not provide you with the UI. You have to look at the API documentation, and start making calls acordingly even to check whether that service is available or not. Not our Perfect Learning App. With Craftista, we have built UI with even the API services. Look at an example here, which shows the Product Catalogue Service with its API. Yes ! Our experience of teaching thousands of professionals from the top companies of the world is real :) 
 
 ![API Service](docs/api.png)
 
 ### 10 - Mono Repo Structure:
+While there are different school of thoughts while maintaining the code base, we have decided to follow the monorepo structure. This is a very popular approach in the devops community. It has many benefits, such as, easier to maintain, easier to understand, and easier to scale. And the main reason why we have chosen it is its a slight bit trickier while working with Mono Repos to setup CI/CD Pipelines, to organise your devops your code etc. If you have done it with mono, you would find it breeze to adopt to multi repo structure anyways. 
 
 ![Mono Repo](docs/monorepo.png)
+
 
 
 
