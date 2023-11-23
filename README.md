@@ -8,6 +8,8 @@ We, at [School of Devops](www.schoolofdevops.com) take pride to introduce you to
 
 Welcome to Craftista, a unique web platform dedicated to the beautiful and intricate world of origami. Craftista is a place where origami enthusiasts and artists come together to showcase their creations, share their passion, and engage with a like-minded community. Our platform allows users to explore a diverse range of origami art, vote for their favorites, and get inspired by the daily featured origami.
 
+![Simple Design](docs/stage4-02.png)
+
 ### Features
 
 **Origami Showcase**: Discover a wide array of origami creations, ranging from traditional designs to contemporary art pieces. Each origami has its own story and charm, waiting to be unfolded.
