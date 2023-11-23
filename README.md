@@ -96,39 +96,44 @@ Each service is built using a different technology stack, showcasing polyglot pe
 
 ## Why Craftista is the Best Application for Devops Projects ?
 
-**Real Life Like - Micro Services, Polyglot App:** If you look at the architecture and the services of Craftista App, it resembles a real life use case. It's a polyglot microservices based application, with multiple backend services, each with its own technology stack. You can think of it as a simplified version of a E-Commerce platform as it has the essential services such as a Modern UI written in Node.Js, a Product Catalogue Service, a Recommendation Engine and even a User Review App (Voting Service). When you are working with Craftista, it is as good as building a Real Life Project. 
+### 01 - Real Life Like - Micro Services, Polyglot App: If you look at the architecture and the services of Craftista App, it resembles a real life use case. It's a polyglot microservices based application, with multiple backend services, each with its own technology stack. You can think of it as a simplified version of a E-Commerce platform as it has the essential services such as a Modern UI written in Node.Js, a Product Catalogue Service, a Recommendation Engine and even a User Review App (Voting Service). When you are working with Craftista, it is as good as building a Real Life Project. 
 
 
-**Modern Tech Stack:** 
+### 02 - Modern Tech Stack:
 We have made deliberate efforts to choose the technologies commonly used by organisations across the globe to build modern applications which technology choice such as  Express.js Framework based off Node.js, Golang, Python Flask Framework and Java Based Spring Boot Framework. 
 
-**Simple Design:**
+### 03 - Simplified Design:
 We have deliberately kept the design simple by removing a lot of additional services such as Shopping Carts, User Management, Payments Processing, Order Management to keep the scope of the project manageable. You will not get lost into the complexity of the architecture and get overwhelmed by the magnitute of services to work with. Yet it is still sophisticated enough for you to get a taste of a Real World Project. 
 ![Simple Design](docs/stage4.png)
 
 
-**Iterative, Expandable and Resilient:**
+### 04 - Iterative, Expandable and Resilient:
 One of the reasons why this is a perfect learning app is at no point in time you would feel that its not good enough. Unlike a Real World app, which needs many different servies, database backends to be configured in order to have the MVP working,  You deploy one service with Craftista, you have a working UI Framework, without any backend services or databases being involved. And when you deploy additional services iteratively, the page keeps on getting richer, making it a perfect sample app to work with. 
 
 ![4 Stages of Deployment](docs/4stages.png)
 
-**Prints System Info:**
+### 05 - Prints System Info:
 While building Devops Projects, you are going to deploy this app in containers, take it to kubernetes, scale it and put it behind load balancers. When that happens, how do you get the feedback on if its running within a container or not? Wouldn't it be nicer to find out if its running within a Kubernetes Cluster or not ? How do you validate the Load Balancer is working (should show differnt hostnames/ips every time you refresh). Thats where we have added the Sytems Info section which shows you all this relevant data. 
 ![System Info](docs/sysinfo.png "System Info")
 
-**Ability to Show the Version:**
+### 06 - Ability to Show the Version:
+
 ![App Version](docs/version.png "App Version")
 
-**Backend Service Status Dashboard:**
+### 07 - Backend Service Status Dashboard:
+
 ![Service Status](docs/servicestatus.png "Service Status")
 
-**Incorporates Unit Tests  & Integration Tests:**
+### 08 - Incorporates Unit Tests  & Integration Tests:
+
 ![Unit Tests](docs/unittests.png)
 
-**Every Service with UI (including APIs):**
+### 09 Every Service with UI (including APIs):
+
 ![API Service](docs/api.png)
 
-**Mono Repo Structure:**
+### 10 - Mono Repo Structure:
+
 ![Mono Repo](docs/monorepo.png)
 
 
