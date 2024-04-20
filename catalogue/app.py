@@ -18,6 +18,7 @@ def get_db_connection():
                             database=config_data.get("db_name"),
                             user=config_data.get("db_user"),
                             password=config_data.get("db_password")
+                           )
     return conn
 
 @app.route('/')
@@ -37,7 +38,7 @@ def get_products():
         cur.close()
         conn.close()
         return jsonify(db_products), 200
-    else
+    else:
         return jsonify(products), 200
 
 
