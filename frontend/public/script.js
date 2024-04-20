@@ -130,7 +130,7 @@ function fetchServiceStatus() {
 
 function renderServiceStatus(status) {
   const statusGrid = document.getElementById('status-grid');
-  statusGrid.innerHTML = ''; // clear the existing items
+  // statusGrid.innerHTML = ''; // clear the existing items
   
   Object.keys(status).forEach(service => {
     const statusBox = document.createElement('div');
