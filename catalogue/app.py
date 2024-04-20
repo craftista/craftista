@@ -3,6 +3,7 @@ from datetime import datetime
 import socket
 import os
 import json
+import psycopg2
 
 app = Flask(__name__)
 
