@@ -4,8 +4,8 @@ import psycopg2
 conn = psycopg2.connect(
         host="catalogue-db",
         database="catalogue",
-        user=os.environ['devops'],
-        password=os.environ['devops'])
+        user="devops",
+        password="devops"
 
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS products;')
