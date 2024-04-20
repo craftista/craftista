@@ -35,9 +35,10 @@ def get_products():
         cur = conn.cursor()
         cur.execute('SELECT * FROM products;')
         db_products = cur.fetchall()
+        products_dict = [{'id': curr_product[0], 'description': curr_product[1], 'image_url': curr_product[2], 'name': curr_product[3]} for curr_product in db_products]
         cur.close()
         conn.close()
-        return jsonify(db_products), 200
+        return jsonify(products_dict), 200
     else:
         return jsonify(products), 200
 
