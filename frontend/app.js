@@ -70,13 +70,13 @@ app.get('/api/service-status', async (req, res) => {
 
     // If code execution reaches here, the service(s) are up
     res.json({
-      productService: 'up',
+      Catalogue: 'up',
       // otherService: 'up' or 'down'
     });
   } catch (error) {
     console.error('Error:', error);
     res.json({
-      productService: 'down',
+      Catalogue: 'down',
       // otherService: 'up' or 'down'
     });
   }

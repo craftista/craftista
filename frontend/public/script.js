@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
   let currentItems = 6; // starting number of items to display
   //let votingServiceAvailable = false; // global variable to store voting service status
 
-  checkVotingServiceStatus()
+  await checkVotingServiceStatus();
   //setInterval(checkVotingServiceStatus, 30000);  // checks voting service status every 30 se
 
   fetch('/api/products')
@@ -130,7 +130,7 @@ function fetchServiceStatus() {
 
 function renderServiceStatus(status) {
   const statusGrid = document.getElementById('status-grid');
-  statusGrid.innerHTML = ''; // clear the existing items
+  // statusGrid.innerHTML = ''; // clear the existing items
   
   Object.keys(status).forEach(service => {
     const statusBox = document.createElement('div');
