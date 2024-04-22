@@ -5,8 +5,14 @@
 </head>
 <body>
     <h1>Hello World !</h1>
-    <h2> Welcome to Voting app ! <h2>
     <p th:text="${message}">Error details here.</p>
+    <h2>Welcome to the Craftista Voting Service</h2>
+    <p>This service allows users to vote on their favorite origamis.</p>
+    <h2>Available APIs</h2>
+    <ul>
+        <li><a href="/api/origamis">Origamis API</a></li>
+	<li><a href="/api/origamis/1/votes">Votes Submitted to the 1st Origamis</a></li>
+    </ul>
 </body>
 </html>
 
