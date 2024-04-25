@@ -1,4 +1,4 @@
-How to build Frontend App
+How to build Python Flask based Catalogue App
 
   * Python version: latest
   * Build Tool : pip
