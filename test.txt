@@ -1,3 +1,4 @@
 Test
 CH01
+CH02
 
