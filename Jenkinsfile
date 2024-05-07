@@ -4,7 +4,7 @@ pipeline {
     stage('Voting Build') {
       agent {
         docker {
-          image 'maven:3-eclipse-temurin-19-alpine'
+          image 'maven:3.9.6-eclipse-temurin-17-alpine'
         }
 
       }
@@ -20,7 +20,7 @@ pipeline {
     stage('Voting Test') {
       agent {
         docker {
-          image 'maven:3-eclipse-temurin-19-alpine'
+          image 'maven:3.9.6-eclipse-temurin-17-alpine'
         }
 
       }
@@ -37,7 +37,7 @@ pipeline {
         stage('Voting Package') {
           agent {
             docker {
-              image 'maven:3-eclipse-temurin-19-alpine'
+              image 'maven:3.9.6-eclipse-temurin-17-alpine'
             }
 
           }
