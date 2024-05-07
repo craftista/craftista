@@ -39,8 +39,8 @@ pipeline {
             docker {
               image 'maven:3.9.6-eclipse-temurin-17-alpine'
             }
-          when { branch 'main' }
           }
+          when { branch 'main' }
           steps {
             dir(path: 'voting') {
               sh 'mvn package -DskipTests'
