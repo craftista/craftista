@@ -1,21 +1,33 @@
-pipeline{
+pipeline {
   agent any
-  tools{
-    maven 'maven 3.9.6'
-  }
-  stages{
-    stage("voting Build"){
-      steps{
+  stages {
+    stage('voting Build') {
+      steps {
         echo 'compilation of voting begins....'
-        dir('voting') {
+        dir(path: 'voting') {
           sh 'mvn compile'
         }
+
       }
     }
+
+    stage('Voting Test') {
+      steps {
+        dir(path: 'voting') {
+          sh 'echo "Testing"'
+        }
+
+      }
+    }
+
   }
-  post{
-    always{
+  tools {
+    maven 'maven 3.9.6'
+  }
+  post {
+    always {
       echo 'done with compilation'
     }
+
   }
 }
