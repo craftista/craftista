@@ -36,6 +36,9 @@ pipeline {
 
         stage('voting build & publish') {
           agent any
+          when {
+                branch 'main'
+            }
           steps {
             script {
               docker.withRegistry('https://index.docker.io/v1','dockerlogin'){
