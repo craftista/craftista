@@ -1,7 +1,13 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('Voting build') {
+      agent {
+        docker {
+          image 'maven:3.9.6-eclipse-temurin-17'
+        }
+
+      }
       steps {
         echo 'Compiling app'
         dir(path: 'voting') {
@@ -12,6 +18,12 @@ pipeline {
     }
 
     stage('voting test') {
+      agent {
+        docker {
+          image 'maven:3.9.6-eclipse-temurin-17'
+        }
+
+      }
       steps {
         dir(path: 'voting') {
           sh 'mvn clean test'
@@ -21,17 +33,37 @@ pipeline {
     }
 
     stage('voting package') {
-      steps {
-        dir(path: 'voting') {
-          sh 'mvn package -DskipTests'
+      parallel {
+        stage('voting package') {
+          agent {
+            docker {
+              image 'maven:3.9.6-eclipse-temurin-17'
+            }
+
+          }
+          steps {
+            dir(path: 'voting') {
+              sh 'mvn package -DskipTests'
+            }
+
+          }
         }
 
-      }
-    }
+        stage('') {
+          steps {
+            script {
+              docker.withRegistry('https://docker.io/v1', 'dockerlogin') {
+                def commitHash = env.GIT_COMMIT.take(7)
+                def dockerImage = docker.build("willywan/craftista-voting:${commitHash}", "./")
+                dockerImage.push()
+                dockerImage.push("latest")
+                dockerImage.push("dev")
+              }
+            }
 
-    stage('archive artifacts') {
-      steps {
-        archiveArtifacts '**/target/*.jar'
+          }
+        }
+
       }
     }
 
