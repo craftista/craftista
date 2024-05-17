@@ -1,4 +1,4 @@
-Pipeline{
+Pipeline {
 
 agent any
 
