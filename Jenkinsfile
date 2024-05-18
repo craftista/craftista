@@ -50,6 +50,7 @@ pipeline {
         }
 
         stage('error') {
+          agent any
           steps {
             script {
               docker.withRegistry('https://docker.io/v1', 'dockerlogin') {
