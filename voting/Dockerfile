@@ -1,5 +1,5 @@
 # Stage 1: Build the application with Maven
-FROM maven:3.9.1-eclipse-temurin-19 AS build
+FROM maven:3.9.6-eclipse-temurin-11 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY . .
 RUN mvn package -DskipTests
 
 # Stage 2: Create the runtime image
-FROM eclipse-temurin:19-jdk-jammy
+FROM eclipse-temurin:21
 
 # Set the working directory inside the container
 WORKDIR /app
