@@ -49,7 +49,7 @@ pipeline {
           }
         }
 
-        stage('error') {
+        stage('voting Image') {
           agent any
           steps {
             script {
@@ -62,6 +62,53 @@ pipeline {
               }
             }
 
+          }
+        }
+
+      }
+    }
+
+    stage('Frontend Build') {
+      agent {
+        docker {
+          image 'node:latest'
+        }
+
+      }
+      steps {
+        dir(path: 'frontend') {
+          sh 'npm install'
+        }
+
+      }
+    }
+
+    stage('Frontend test') {
+      agent {
+        docker {
+          image 'node:latest'
+        }
+
+      }
+      steps {
+        dir(path: 'frontend') {
+          sh '''npm install
+npm test'''
+        }
+
+      }
+    }
+
+    stage('Frontend Image') {
+      agent any
+      steps {
+        script {
+          docker.withRegistry('https://docker.io/v1', 'dockerlogin') {
+            def commitHash = env.GIT_COMMIT.take(7)
+            def dockerImage = docker.build("willywan/craftista-frontend:${commitHash}", "./frontend")
+            dockerImage.push()
+            dockerImage.push("latest")
+            dockerImage.push("dev")
           }
         }
 
