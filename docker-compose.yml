@@ -1,0 +1,68 @@
+version: '3.8'
+
+networks:
+  craftista-network:
+    driver: bridge
+
+
+services:
+  
+  # Frontend Service
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PRODUCTS_API_BASE_URI=http://catalogue:5000
+      - RECOMMENDATION_BASE_URI=http://recommendation:8080
+      - VOTING_BASE_URI=http://voting:8081
+    depends_on:
+      - catalogue
+      - recommendation
+      - voting
+    networks:
+      - craftista-network
+
+  # Catalogue Service (Python Flask)
+  catalogue:
+    build: ./catalogue
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_ENV=production
+      - MONGO_URI=mongodb://catalogue-db:27017/craftista
+    depends_on:
+      - catalogue-db
+    networks:
+      - craftista-network
+
+  # MongoDB for Catalogue Service
+  catalogue-db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - catalogue-db-data:/data/db
+    networks:
+      - craftista-network
+
+  #Voting Service (Java Spring Boot)
+  voting:
+    build: ./voting
+    ports:
+      - "8080:8080"
+    networks:
+      - craftista-network
+   
+
+  # Recommendation Service (Golang)
+  recommendation:
+    build: ./recommendation
+    ports:
+      - "8081:8080"
+    networks:
+      - craftista-network
+
+volumes:
+  catalogue-db-data:
