@@ -3,6 +3,9 @@
 
 We, at [School of Devops](https://schoolofdevops.com) take pride to introduce you to Craftista, a Polyglot, Micro-Services based application, built with the Modern Tech stack, specially designed to be used as a learning app to buid Devops Projects with.  
 
+## This Project is for Builders 
+This project is for builders who want to learn Devops by building projects from scratch. If you are looking for just launching this app in less than 5 minutes and playing around with it, head over to [Craftista Demo](https://github.com/craftista/craftista-demo) instead. 
+
 
 ## What is Craftista: Celebrating the Art of Origami 
 
@@ -155,6 +158,28 @@ While there are different school of thoughts while maintaining the code base, we
 
 ## For Developers and DevOps Enthusiasts
 Craftista serves as a perfect sandbox for developers and DevOps practitioners. The microservices architecture of the application makes it an ideal candidate for experimenting with containerization, orchestration, CI/CD pipelines, and cloud-native technologies. It's designed to be a hands-on project for learning and implementing DevOps best practices.
+
+## What can you build with this app ? 
+
+Here are 10 basic projects you could build with it that would make you a Real Devops Engineer
+  1.  Containerize with Docker: Write Dockerfiles for each of the services, and a docker compose to run it as a micro services application stack to automate dev environments.  
+  2.  Build CI Pipeline : Build a complete CI Pipeline using Jenkins, GitHub Actions, Azure Devops etc.  
+  3.  Deploy to Kubernetes : Write kubernetes manifests to create Deployments, Services, PVCs, ConfigMaps, Statefulsets and more  
+  4.  Package with Helm : Write helm charts to templatize the kubernetes manifests and prepare to deploy in different environments  
+  5.  Blue/Green and Canary Releases with ArgoCD/GitOps: Setup releases strategies with Argo Rollouts Combined with ArgoCD and integrate with CI Pipeline created in 3. to setup a complete CI/CD workflow.  
+  6.  Setup Observability : Setup monitoring with Prometheus and Grafana (Integrate this for automated CD with rollbacks using Argo), Setup log management with ELS/EFK Stack or Splunk.
+  7.  Build a DevSecOps Pipeline: Create a DevSecOps Pipeline by adding SCA, SAST, Image Scanning, DAST, Compliance Scans, Kubernetes Scans etc. and more at each stage.
+  8.  Design and Build Cloud Infra : Build Scalable, Hight Available, Resilience, Fault Tolerance Cloud Infra to host this app.
+  9.  Write Terraform Templating : Automate the infra designed in project 8. Use Terragrunt on top for multi environment configurations.  
+  10.  Python Scripts for Automation : Automate ad-hoc tasks using python scripts.
+
+and if you want to take it to the next level here are 5 Advanced Projects:
+
+  1. Deploy on EKS/AKS: Build EKS/AKS Cluster and deploy this app with helm packages you created earlier.
+  2. Implement Service Mesh: Setup advanced observability, traffic management and shaping, mutual TLS, client retries and more with Istio.
+  3. AIOps: On top of Observability, incorporate Machine Learning models, Falco and Argo Workflow for automated monitoring, incident response and mitigation.
+  4. SRE: Implement SLIs, SLOs, SLAs on top of the project 6 and setup Site Reliability Engineering practices.  
+  5. Chaos Engineering : Use LitmusChaos to test resilience of your infra built on Cloud with Kubernetes and Istio.
 
 ## Contributing
 While we have attempted to make it a Perfect Learning App, and have got many things right, its still a work in progress. As we see more useful features from the perspective of learning Devops, we will continue to improve upon this work. We welcome contributions from the community! Whether you're an origami artist wanting to showcase your work, a developer interested in microservices, or just someone enthusiastic about the devops learning projects, your contributions are valuable. Check out our contributing guidelines(to be added) for more information. While we are writing the guidelines, feel free send us a pull request when you have something interesting to add.  
