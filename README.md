@@ -185,6 +185,9 @@ and if you want to take it to the next level here are 5 Advanced Projects:
 ## Contributing
 While we have attempted to make it a Perfect Learning App, and have got many things right, its still a work in progress. As we see more useful features from the perspective of learning Devops, we will continue to improve upon this work. We welcome contributions from the community! Whether you're an origami artist wanting to showcase your work, a developer interested in microservices, or just someone enthusiastic about the devops learning projects, your contributions are valuable. Check out our contributing guidelines(to be added) for more information. While we are writing the guidelines, feel free send us a pull request when you have something interesting to add.  
 
+## Attribution
+This project is released under the Apache 2.0 License. If you use, modify, or distribute this project, you must retain the original license and give proper credit to the authors. Please include a reference to the original repository and authors: [[GitHub Repository URL](https://github.com/craftista)].
+
 ## License
 Craftista is open-sourced under the Apache License 2.0.
 
