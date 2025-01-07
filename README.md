@@ -3,8 +3,8 @@
 
 We, at [School of Devops](https://schoolofdevops.com) take pride to introduce you to Craftista, a Polyglot, Micro-Services based application, built with the Modern Tech stack, specially designed to be used as a learning app to buid Devops Projects with.  
 
-## This Project is for Builders 
-This project is for builders who want to learn Devops by building projects from scratch. If you are looking for just launching this app in less than 5 minutes and playing around with it, head over to [Craftista Demo](https://github.com/craftista/craftista-demo) instead. 
+## Demo Repository (If you just want to launch the app in 5 mins and play with it)
+This project repo  is for builders who want to learn Devops by building projects from scratch. If you are looking for just launching this app in less than 5 minutes and playing around with it, head over to [Craftista Demo](https://github.com/craftista/craftista-demo) instead. 
 
 
 ## What is Craftista: Celebrating the Art of Origami 
@@ -159,7 +159,8 @@ While there are different school of thoughts while maintaining the code base, we
 ## For Developers and DevOps Enthusiasts
 Craftista serves as a perfect sandbox for developers and DevOps practitioners. The microservices architecture of the application makes it an ideal candidate for experimenting with containerization, orchestration, CI/CD pipelines, and cloud-native technologies. It's designed to be a hands-on project for learning and implementing DevOps best practices.
 
-## What can you build with this app ? 
+---
+## 15 Project Ides to build using this Application Repo 
 
 Here are 10 basic projects you could build with it that would make you a Real Devops Engineer
   1.  Containerize with Docker: Write Dockerfiles for each of the services, and a docker compose to run it as a micro services application stack to automate dev environments.  
