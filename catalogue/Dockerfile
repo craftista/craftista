@@ -19,6 +19,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application source code
 COPY . .
 
+# Run the specific test file before proceeding to the final build stage
+RUN python -m unittest test_app.py
+
 # Stage 2: Runtime stage
 FROM python:3.11-slim
 
